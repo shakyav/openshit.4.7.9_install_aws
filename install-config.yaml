@@ -1,0 +1,49 @@
+apiVersion: v1
+baseDomain: your-domain-name
+compute:
+- architecture: amd64
+  hyperthreading: Enabled
+  name: worker
+  platform:
+    aws:
+      zones:
+      - us-east-1a
+      rootVolume:
+         iops: 0
+         size: 0
+         type: ""
+      type: m4.xlarge
+  replicas: 2
+controlPlane:
+  architecture: amd64
+  hyperthreading: Enabled
+  name: master
+  platform:
+    aws:
+     zones:
+     - us-east-1a
+     rootVolume:
+        iops: 0
+        size: 0
+        type: ""
+     type: m4.xlarge
+  replicas: 3
+metadata:
+  creationTimestamp: null
+  name: openshift-aws
+networking:
+  clusterNetwork:
+  - cidr: 10.128.0.0/14
+    hostPrefix: 23
+  machineNetwork:
+  - cidr: 10.0.0.0/16
+  networkType: OpenShiftSDN
+  serviceNetwork:
+  - 172.30.0.0/16
+platform:
+  aws:
+    region: us-east-1
+publish: External
+sshkey: 
+pullSecret: 
+
