@@ -49,7 +49,7 @@
    - once the installer is finished successfully , it will return the web-console url and kubeadmin user and password as the output
    - all if due to some reasons your terminal freeze up and you can't view whether the installer has finished or not, do an "ls"
      to verify the directories 'auth', 'tls' and file 'metadata.json' is created or not
-   - the format of the console url is like this https://console-openshift-console.apps.<cluster-name>.<base-domain> , 
+   - the format of the console url is like this https://console-openshift-console.apps.cluster-name.base-domain , 
      cluster-name and base domain are same as you provided while creating the install-config.yaml
    - "kubeadmin" is the default admin user and you find the password for it in ./auth/kubeadmin-password file
    - login to the web-console with "kubeadmin" user and password
